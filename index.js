@@ -253,3 +253,46 @@ new_users.forEach(function (userName) {
         console.log("".concat(userName, ", username is available."));
 });
 console.log("\n-------------Question 33------------------");
+var ordinal_number = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'];
+ordinal_number.forEach(function (number) {
+    console.log(number);
+});
+console.log("\n-------------Question 34------------------");
+var pizzaNames = ['italian', 'BBQ', 'fajita'];
+pizzaNames.forEach(function (name) {
+    console.log("I like ".concat(name, " pizza"));
+});
+console.log("I really like pizzas \n pizza is best food item for celebration");
+console.log("\n-------------Question 35------------------");
+var animals = ['dog', 'cat', 'goat'];
+animals.forEach(function (animal) {
+    console.log("".concat(animal));
+});
+console.log("".concat(animals[0], " and ").concat(animals[1], " would make a great pet!"));
+console.log("\n-------------Question 36------------------");
+var make_shirt = function (size, msg) {
+    if (size.toLowerCase() === 'large' || size.toLowerCase() === 'midium') {
+        console.log("This shirt size is ".concat(size, " and \"I love TypeScript\" is written on it"));
+    }
+    else
+        console.log("This shirt size is ".concat(size, " and \"").concat(msg, "\" is written on it"));
+};
+make_shirt('small', 'wow');
+console.log("\n-------------Question 37------------------");
+make_shirt('large', 'abc');
+console.log("\n-------------Question 38------------------");
+var describe_city = function (city, country) {
+    if (country === void 0) { country = 'XYZ'; }
+    console.log("".concat(city, " is in ").concat(country));
+};
+console.log(describe_city('Rawalpindi'));
+console.log(describe_city('Istanbul', 'Turkey'));
+console.log(describe_city('Itally', 'Rome'));
+console.log("\n-------------Question 39------------------");
+var city_country = function (city, country) {
+    return "\"".concat(city, ", ").concat(country, "\"");
+};
+console.log(city_country('Rawalpindi', 'Pakistan'));
+console.log(city_country('Istanbul', 'Turkey'));
+console.log(city_country('Itally', 'Rome'));
+console.log("\n-------------Question 39------------------");

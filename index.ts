@@ -285,3 +285,24 @@ make_shirt('small', 'wow');
 
 console.log(`\n-------------Question 37------------------`);
 make_shirt('large', 'abc');
+
+console.log(`\n-------------Question 38------------------`);
+const describe_city = (city:string, country:string='XYZ') =>{
+    console.log(`${city} is in ${country}`)
+}
+describe_city('Rawalpindi')
+describe_city('Istanbul','Turkey')
+describe_city('Itally','Rome')
+
+console.log(`\n-------------Question 39------------------`);
+const city_country = (city:string, country:string):string => {
+    return `"${city}, ${country}"`;
+}
+console.log(city_country('Rawalpindi','Pakistan'))
+console.log(city_country('Istanbul','Turkey'))
+console.log(city_country('Itally','Rome'))
+
+console.log(`\n-------------Question 40------------------`);
+const make_album = () =>{
+    
+}
