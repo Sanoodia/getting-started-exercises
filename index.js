@@ -285,9 +285,9 @@ var describe_city = function (city, country) {
     if (country === void 0) { country = 'XYZ'; }
     console.log("".concat(city, " is in ").concat(country));
 };
-console.log(describe_city('Rawalpindi'));
-console.log(describe_city('Istanbul', 'Turkey'));
-console.log(describe_city('Itally', 'Rome'));
+describe_city('Rawalpindi');
+describe_city('Istanbul', 'Turkey');
+describe_city('Itally', 'Rome');
 console.log("\n-------------Question 39------------------");
 var city_country = function (city, country) {
     return "\"".concat(city, ", ").concat(country, "\"");
@@ -295,4 +295,68 @@ var city_country = function (city, country) {
 console.log(city_country('Rawalpindi', 'Pakistan'));
 console.log(city_country('Istanbul', 'Turkey'));
 console.log(city_country('Itally', 'Rome'));
-console.log("\n-------------Question 39------------------");
+console.log("\n-------------Question 40------------------");
+var make_album = function (name, title, numOfTracks) {
+    return (numOfTracks) ? {
+        name: name,
+        title: title,
+        numOfTracks: numOfTracks
+    } :
+        {
+            name: name,
+            title: title
+        };
+};
+console.log(make_album('Whitney Houston', 'the bodyguard'));
+console.log(make_album('Warner Bros', 'Pruple Rain'));
+console.log(make_album('Warner Bros', 'Pruple Rain', '23'));
+console.log("\n-------------Question 41------------------");
+var magicians = ['abc', 'xyz', 'sasf'];
+var show_magicians = function (magiciansList) {
+    magiciansList.forEach(function (magician) {
+        console.log(magician);
+    });
+};
+show_magicians(magicians);
+console.log("\n-------------Question 42------------------");
+var make_great = function () {
+    magicians.forEach(function (magician, index) {
+        magicians[index] = "Great to each ".concat(magician);
+    });
+};
+make_great();
+show_magicians(magicians);
+console.log("\n-------------Question 43------------------");
+magicians = ['abc', 'xyz', 'sasf'];
+var make_great_copy = function () {
+    return __spreadArray([], magicians, true).map(function (magician) { return "Great to each ".concat(magician); });
+};
+var magicians_copy = make_great_copy();
+console.log("\n-------------Question 44------------------");
+var make_sandwich = function () {
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    console.log("Person ordered sandwich includes:".concat(args.join(',')));
+};
+make_sandwich('potaotos', 'onions', 'jalapeno');
+make_sandwich('potaotos', 'onions', 'mayo');
+make_sandwich('tomatos', 'onions', 'mayo');
+console.log("\n-------------Question 44------------------");
+var cars = function (manufacturer, name) {
+    var rest = [];
+    for (var _i = 2; _i < arguments.length; _i++) {
+        rest[_i - 2] = arguments[_i];
+    }
+    var car = {
+        manufacturer: manufacturer,
+        name: name
+    };
+    rest.forEach(function (feature) {
+        // console.log(feature)
+        car = __assign(__assign({}, car), feature);
+    });
+    console.log(car);
+};
+cars('toyota', 'corolla', { color: 'red' });

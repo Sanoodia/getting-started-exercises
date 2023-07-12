@@ -49,32 +49,32 @@ console.log(`comment added at line 6 and 12`)
 
 console.log(`\n-------------Question 11------------------`)
 let names:string[] = ['fatima', 'mehreen', 'sonia'];
-names.forEach(name => {
+names.forEach((name:string) => {
     console.log(name)
 });
 
 console.log(`\n-------------Question 12------------------`)
 message = 'Hi,';
-names.forEach(name => {
+names.forEach((name:string) => {
     console.log(`${message} ${name}`)
 });
 
 console.log(`\n-------------Question 13------------------`)
 let favVehicles:string[] = ['Prius','Kia Sportage','Aqua']
-favVehicles.forEach(vehicle=>{
+favVehicles.forEach((vehicle:string)=>{
     console.log(`I would like to own a ${vehicle} car`)
 })
 
 console.log(`\n-------------Question 14------------------`)
 let guestList:string[] = ['Fatima','Mehreen','Sonia']
-guestList.forEach(guest=>{
+guestList.forEach((guest:string)=>{
     console.log(`Dear ${guest}, You are invited for today's dinner`)
 })
 
 console.log(`\n-------------Question 15------------------`)
 console.log(`${guestList[1]} not avaiable`)
 guestList[1] = 'Saba'
-guestList.forEach(guest=>{
+guestList.forEach((guest:string)=>{
     console.log(`Dear ${guest}, You are invited for today's dinner`)
 })
 
@@ -83,7 +83,7 @@ console.log(`I found a bigger dinner table`)
 guestList.unshift("Neha")
 guestList.splice(guestList.length/2, 0, "Laraib");
 guestList.push('iffet')
-guestList.forEach(guest=>{
+guestList.forEach((guest:string)=>{
     console.log(`Dear ${guest}, You are invited for today's dinner`)
 })
 
@@ -92,7 +92,7 @@ console.log(`I can invite only two people for dinner`)
 while(guestList.length > 2){
     console.log(`sorry ${guestList.pop()} I can’t invite you to dinner`);
 }
-guestList.forEach(guest=>{
+guestList.forEach((guest:string)=>{
     console.log(`Dear ${guest}, You are still invited`)
 })
 guestList.length = 0
@@ -221,7 +221,7 @@ const stagesOfLife = (age: number) =>{
 
 console.log(`\n-------------Question 29------------------`);
 let favorite_fruits:string[] = ['banana','mango','peach'];
-['apple','banana','cherry','peach','guava'].forEach(fruit => {
+['apple','banana','cherry','peach','guava'].forEach((fruit:string) => {
     if(favorite_fruits.indexOf(fruit) !== -1){
         console.log(`You really like ${fruit}!`)
     }
@@ -229,7 +229,7 @@ let favorite_fruits:string[] = ['banana','mango','peach'];
 
 console.log(`\n-------------Question 30------------------`);
 let userName:string[] = ['User1','User2','User3','Admin','User4']
-userName.forEach(user => {
+userName.forEach((user:string) => {
     if(user === 'Admin'){
         console.log('Hello admin, would you like to see a status report?')
     }else{
@@ -246,7 +246,7 @@ if(userName.length == 0){
 console.log(`\n-------------Question 32------------------`);
 let current_users:string[] = ['User1','User2','User3','Admin','User4']
 let new_users:string[] = ['User1','USER2','User5']
-new_users.forEach(userName => {
+new_users.forEach((userName:string) => {
     if(current_users.indexOf(userName) !== -1){
         console.log(`${userName}, You will need to enter a new username`)
     }else
@@ -255,13 +255,13 @@ new_users.forEach(userName => {
 
 console.log(`\n-------------Question 33------------------`);
 let ordinal_number :string[] = ['1st','2nd','3rd','4th','5th','6th','7th','8th','9th']
-ordinal_number.forEach(number=>{
+ordinal_number.forEach((number:string)=>{
     console.log(number)
 })
 
 console.log(`\n-------------Question 34------------------`);
 let pizzaNames :string[] = ['italian', 'BBQ','fajita']
-pizzaNames.forEach(name=>{
+pizzaNames.forEach((name:string)=>{
     console.log(`I like ${name} pizza`)
 })
 console.log(`I really like pizzas \n pizza is best food item for celebration`)
@@ -269,7 +269,7 @@ console.log(`I really like pizzas \n pizza is best food item for celebration`)
 
 console.log(`\n-------------Question 35------------------`);
 let animals :string[] = ['dog', 'cat','goat']
-animals.forEach(animal=>{
+animals.forEach((animal:string)=>{
     console.log(`${animal}`)
 })
 console.log(`${animals[0]} and ${animals[1]} would make a great pet!`)
@@ -303,6 +303,65 @@ console.log(city_country('Istanbul','Turkey'))
 console.log(city_country('Itally','Rome'))
 
 console.log(`\n-------------Question 40------------------`);
-const make_album = () =>{
-    
+const make_album = (name:string, title:string, numOfTracks?: string) =>{
+    return (numOfTracks)?{
+        name,
+        title,
+        numOfTracks
+    }:
+    {
+        name,
+        title
+    }
+};
+console.log(make_album('Whitney Houston','the bodyguard'));
+console.log(make_album('Warner Bros', 'Pruple Rain'));
+console.log(make_album('Warner Bros', 'Pruple Rain','23'));
+
+console.log(`\n-------------Question 41------------------`);
+let magicians:string[]  = ['abc','xyz','sasf']
+const show_magicians = (magiciansList:string[]) => {
+    magiciansList.forEach((magician: string) => {
+        console.log(magician)
+    });
 }
+show_magicians(magicians)
+
+console.log(`\n-------------Question 42------------------`);
+let make_great = () =>{
+    magicians.forEach((magician:string, index:number) => {
+        magicians[index] =  `Great to each ${magician}`
+    });
+}
+make_great();
+show_magicians(magicians);
+
+console.log(`\n-------------Question 43------------------`);
+magicians = ['abc','xyz','sasf']
+let make_great_copy = ():string[] =>{
+    return [...magicians].map(magician => `Great to each ${magician}`);
+}
+let magicians_copy:string[] = make_great_copy();
+
+console.log(`\n-------------Question 44------------------`);
+const make_sandwich = (...args:string[]) =>{
+    console.log(`Person ordered sandwich includes:${args.join(',')}`);
+}
+make_sandwich('potaotos','onions','jalapeno')
+make_sandwich('potaotos','onions','mayo')
+make_sandwich('tomatos','onions','mayo')
+
+
+console.log(`\n-------------Question 44------------------`);
+
+const cars = (manufacturer:string ,name:string, ...rest:[{ [key: string]: string }]) =>{
+   let car = {
+    manufacturer,
+    name
+   }
+   rest.forEach(feature=>{
+    car = {...car, ...feature}
+   })
+   console.log(car)
+}
+cars('toyota','corolla',{color:'red'})
